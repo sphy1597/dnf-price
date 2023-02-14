@@ -30,5 +30,4 @@ if(! $connect->set_charset($mysql_charset))
 
    
 	echo "<br> <a href='index.html'> 홈으로 </a> ";
-    echo "<br> <a href='index.html'> 홈으로 </a> ";
 ?>
