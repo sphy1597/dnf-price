@@ -1,0 +1,266 @@
+body {
+  margin: 0;
+  font-family:'Apple SD Gothic Neo',
+  sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  box-sizing: border-box;
+
+  min-width: 1500px;
+
+}
+
+.ch {
+position: relative;
+margin-top: 10px;
+z-index: 10;
+box-shadow: 0 8px 15px rgb(0 0 0 / 10%);
+margin-bottom: 10px;
+}
+
+.ch .tble {
+width: 100%;
+border-bottom: 1px solid #f4f4f4;
+}
+
+.ch .tble:after {
+clear: both;
+display: table;
+content: "";
+}
+
+.tble .th{
+  float: left;
+  width: 132px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 15px;
+  text-align: center;
+  overflow: hidden;
+  padding-right: 30px;
+  font-weight: bold;
+  letter-spacing: -1.3px;
+}
+
+.tble .th span {
+box-shadow: 0 0 10px rgb(0 0 0 / 15%);
+display: block;
+}
+
+.tble .td {
+position: relative;
+padding: 30px 0;
+max-width: 1080px;
+letter-spacing: -1.5px;
+
+}
+
+
+.ch_rk .th{
+height: 100px;
+line-height: 100px;
+}
+
+.ch > div {
+transition: 1s all ease;
+}
+.ch > div:hover {
+background-color: rgba(236,240,241,0.3);
+}
+
+.all {
+margin-bottom: 1em ;
+}
+
+.rkcbox {
+background-color: #c1a57b;
+display:inline-block;
+margin: 0px 0;
+margin-right: 10px;
+border: 1px solid #ececec;
+position: relative;
+font-size: 13px;
+box-shadow: 0 0 8px rgb(0 0 0 / 8%);
+
+}
+.rkcbox label {
+padding: 8px 0px;
+padding-left: 25px;
+width: 125px;
+display: block;
+text-align: left;
+color: #4c3c3f;
+cursor: pointer;
+position: relative;
+z-index: 2;
+transition: color 200ms ease-in;
+overflow: hidden;
+}
+.rkcbox label:before {
+width: 10px;
+height: 10px;
+border-radius: 50%;
+content: "";
+background-color: #424454;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%) scale3d(1, 1, 1);
+transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+opacity: 0;
+
+z-index: -1;
+}
+
+.ch_rk .rkcbox label:before {
+background-color: #3C454C;
+}
+
+
+.rkcbox label:after {
+width: 15px;
+height: 15px;
+content: "";
+background-image: url("img/check.svg");
+background-repeat: no-repeat;
+background-position: 0px 0px;
+z-index: 2;
+position: absolute;
+right: 16px;
+top: 50%;
+transform: translateY(-50%);
+cursor: pointer;
+transition: all 200ms ease-in;
+}
+.rkcbox input:checked ~ label {
+color: #fff;
+}
+.rkcbox input:checked ~ label:before {
+transform: translate(-50%, -50%) scale3d(56, 56, 1);
+opacity: 1;
+}
+
+.rkcbox input:checked ~ label:after {
+  background-color: inherit;
+  border-color: inherit;
+  background-image: url("img/check_full.svg");
+}
+
+.rkcbox input {
+width: 32px;
+height: 32px;
+order: 1;
+z-index: 2;
+position: absolute;
+right: 30px;
+top: 50%;
+transform: translateY(-50%);
+cursor: pointer;
+visibility: hidden;
+}
+
+.ch_job .th {
+height: 200px;
+line-height: 200px;
+
+}
+
+.ch_job.buff .th {
+height: 100px;
+line-height: 100px;
+
+}
+
+.ch_job .td ul {
+margin: 0.2em 0;
+}
+
+.ch_job .td ul li {
+display: inline-block;
+padding: 0 5px;
+width: 140px;
+height: 34px;
+border: 1px solid #ececec;
+background-color: #f4f6f652;
+margin-right: 10px;
+line-height: 36px;
+text-align: left;
+font-size: 13px;
+position: relative;
+text-align: center;
+box-shadow: 0 0 8px rgb(0 0 0 / 8%);
+
+}
+
+
+.ch_job .td  ul.job li a {
+padding: 0 0 0 1em;
+}
+
+.ch_job .td li a {
+float: left;
+width: 100%;
+height: 100%;
+color: #3C454C;
+}
+
+.ch_job .td li a span {
+position: absolute;
+left: 3px;
+top: 4px;
+height: 34px;
+}
+
+.ch_job .td li:checked {
+background-color: chocolate;
+}
+
+.ch_job label {
+position: relative;
+text-align: center;
+
+}
+.ch_job label span{
+  position: absolute;
+  left: 3px;
+  top: 4px;
+  height: 34px;
+}
+
+
+.ch_job .rkcbox label:after {
+background-image: unset;
+}
+
+
+.ch_job .rkcbox.all label:after {
+background-image: url("img/check.svg");
+}
+
+.ch_job .rkcbox.all label {
+  padding: 8px 0px;
+  padding-left: 25px;
+  width: 125px;
+  display: block;
+  text-align: left;
+  color: #3C454C;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
+
+.ch_job .rkcbox.all input:checked ~ label {
+color:white
+}
+
+
+.ch_job .rkcbox input:checked ~ label:after {
+background-image: unset;
+}
+
+.ch_job .rkcbox.all input:checked ~ label:after {
+background-color: inherit;
+border-color: inherit;
+background-image: url(img\check_full.svg);
+}
