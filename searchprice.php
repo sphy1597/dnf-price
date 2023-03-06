@@ -1,7 +1,40 @@
 <?php
-   
 
-    $html = file_get_html ('https://api.neople.co.kr/df/auction?itemName=%ec%a7%84+%eb%af%b8%ec%8a%a4%ed%8a%b8%eb%a6%ac%ec%8a%a4%ec%9d%98+%eb%8b%a8%eb%b0%9c+%ec%9b%a8%ec%9d%b4%eb%b8%8c%5bc%ed%83%80%ec%9e%85%5d&wordType=front&apikey=c5mNPM0xWNNvg9qBQv4HyBZQOXSfbfLb');
+    $secret = "c5mNPM0xWNNvg9qBQv4HyBZQOXSfbfLb";
 
-    echo $html;
+    $encText = urlencode("찬란한 붉은빛 엠블렘[지능]");
+
+    
+
+    $url = "https://api.neople.co.kr/df/auction?itemName=".$encText."&wordType=front&apikey=".$secret;
+
+    //echo $url;
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);               //URL 지정하기
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);    //요청 결과를 문자열로 반환 
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);      //connection timeout 10초 
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);   //원격 서버의 인증서가 유효한지 검사 안함
+
+    $response = curl_exec($ch);
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    curl_close($ch);
+
+    if($status_code == 200){
+        $result = json_decode($response, true);
+        print_r($result);
+        
+    }else{
+        echo "Error : ".$response;
+    }
+
+    /*
+    var_dump($response);        //결과 값 출력
+    print_r(curl_getinfo($ch)); //모든 정보 출력
+    echo curl_errno($ch);       //에러 정보 출력
+    echo curl_error($ch);       //에러 정보 출력
+    */
+    
+
 ?>
